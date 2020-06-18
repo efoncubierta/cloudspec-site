@@ -8,7 +8,7 @@ menu:
     weight: 20
 ---
 
-{< alert color="warning" >}}
+{{< alert color="warning" >}}
 CloudSpec is still in its early days. If you find any inconsistency, typo or bug, please report it to us through Github's issues. Sorry for any inconvenience.
 {{< /alert >}} 
 
