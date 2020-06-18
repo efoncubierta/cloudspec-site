@@ -3,7 +3,7 @@ title: "Examples"
 linkTitle: "Examples"
 weight: 30
 description: >
-  Some examples.
+  Some CloudSpec examples.
 ---
 
 ```

@@ -3,7 +3,7 @@ title: "Property Values"
 linkTitle: "Property Values"
 weight: 12
 description: >
-  Full details about member paths.
+  Describe all types of properties supported in CloudSpec.
 ---
 
 A property can be of one of the following types:

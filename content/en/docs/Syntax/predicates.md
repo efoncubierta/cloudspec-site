@@ -3,12 +3,12 @@ title: "Predicates"
 linkTitle: "Predicates"
 weight: 11
 description: >
-  Full details about member paths.
+  Describe all evaluators for the property values.
 ---
 
-Predicates validate a property value. CloudSpec currently support the following predicates.
-Terms marked with `?` are optional, and can be used improve readability making it feel more natural.
-For example, both `is > ip address "10.0.0.1"` and `> ip "10.0.0.1"` are the same predicates.
+Predicates validate a property value, and are used to narrow down validation scopes and asserting resource properties. CloudSpec currently support the predicates below. Keywords marked with `?` are optional, and can be used improve readability to make the syntax feel more natural. For example, both `is > ip address "10.0.0.1"` and `> ip "10.0.0.1"` are the same predicates.
+
+For more information about values, see the [Property Values](property-values)) section.
 
 **For any value:**
 

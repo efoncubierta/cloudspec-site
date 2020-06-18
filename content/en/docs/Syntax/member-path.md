@@ -3,13 +3,10 @@ title: "Member Path"
 linkTitle: "Member Path"
 weight: 10
 description: >
-  Full details about member paths.
+  How to address property values with member paths.
 ---
 
-A resource have two types of members: property and association. A property has a value, while an association is a
-reference to another resource. Both `with` and `assert` statements works on properties and associations. A property
-can also hold nested properties. So `:member_path` can have different shapes, but it must always end with a property
-as it is its value what gets validated against the predicate.
+A resource have two types of members: property and association. A property has a value, while an association is a reference to another resource. Both `with` and `assert` statements works on properties and associations. A property can also hold nested properties. So `:member_path` can have different shapes, but it must always end with a property as it is its value what gets validated against the predicate.
 
 **Single property**
 
