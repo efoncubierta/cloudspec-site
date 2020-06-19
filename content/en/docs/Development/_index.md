@@ -1,7 +1,7 @@
 ---
 title: "Development"
 linkTitle: "Development"
-weight: 13
+weight: 14
 description: >
   The CloudSpec development guidelines.
 ---
