@@ -67,9 +67,18 @@ docker run -v "./specs:/specs" -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e 
 
 If you are running the docker container in AWS with a dedicated IAM role attached, you can omit the AWS environment variables.
 
+```
+docker run -v "./specs:/specs" efoncubierta/cloudspec run -p specs/my.csplan
+```
+
 You should get an output report like the following.
 
 ```
+[INFO] Starting CloudSpec Runner
+[INFO] Initiating CloudSpec
+[INFO] Validating CloudSpec input
+[INFO] Loading resources required to run this test
+[INFO] Generating report
 |                        Test                        | #Re  | %RS  | #Va  | %VS  |
 |----------------------------------------------------|------|------|------|------|
 | My production environment                          |  1   | 100% |  1   | 100% |
