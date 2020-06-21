@@ -1,6 +1,6 @@
 ---
-title: "Logical Language"
-linkTitle: "Logical Language"
+title: "Syntax"
+linkTitle: "Syntax"
 weight: 10
 description: >
   The CloudSpec logical language syntax.
