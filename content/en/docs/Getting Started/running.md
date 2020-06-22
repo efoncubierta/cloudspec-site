@@ -73,18 +73,6 @@ docker run -v "./specs:/specs" efoncubierta/cloudspec run -p specs/my.csplan
 
 You should get an output report like the following.
 
-```
-[INFO] Starting CloudSpec Runner
-[INFO] Initiating CloudSpec
-[INFO] Validating CloudSpec input
-[INFO] Loading resources required to run this test
-[INFO] Generating report
-
-|                        Test                        | #Re  | %RS  | #Va  | %VS  |
-|----------------------------------------------------|------|------|------|------|
-| My production environment                          |  1   | 100% |  1   | 100% |
-| [R]  EC2 instances should have enough disk spac... |  1   | 100% |  1   | 100% |
-|----------------------------------------------------|------|------|------|------|
-```
+<p align="center"><img style="max-width: 100%" src="/images/demo.gif?raw=true"/></p>
 
 Voilà! You just run your first CloudSpec plan. Congratulations!
