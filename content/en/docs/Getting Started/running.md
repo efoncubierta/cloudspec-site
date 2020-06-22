@@ -79,6 +79,7 @@ You should get an output report like the following.
 [INFO] Validating CloudSpec input
 [INFO] Loading resources required to run this test
 [INFO] Generating report
+
 |                        Test                        | #Re  | %RS  | #Va  | %VS  |
 |----------------------------------------------------|------|------|------|------|
 | My production environment                          |  1   | 100% |  1   | 100% |
