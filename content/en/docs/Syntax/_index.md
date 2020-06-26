@@ -6,87 +6,42 @@ description: >
   The CloudSpec logical language syntax.
 ---
 
-At a high-level, it all starts with a `plan`. A `plan` contains one or more `module`, `group` or `rule`. Each `module` contains one or more `group` or `rule`. Each `group` contains one or more validation `rule`. `plan` and `module` can define `input` variables. `module`, `group` and `rule` can be imported from other files (i.e. `use (module|group|rule)`), or defined in-line. `plan`, `module` and `group` can `set` configuration parameters. `rule` defines a validation scope using `on` and `with`. `rule` defines validations using `assert`.
+At a high-level, it all starts with a `module`. A `module` is a directory contains one or more `.cs` files. Each file can declare one or many `input` variables, configuration parameters for the module using `set`, validation `rule`s, or even import other module directories using `use`. A `rule` defines a validation scope using `on` and `with`. `rule` defines validations using `assert`.
 
-All keywords are case-insensitive (e.g. both `plan` and `PLAN` are valid).
+All keywords are case-insensitive (e.g. both `rule` and `RULE` are valid).
 
-## `plan` declaration
+## `module` directory
 
-To validate your resources you need one `plan`, and only one `plan`. Everything in CloudSpec is declared within a `plan`. A `plan` is declared in a file with `.csp` extension. 
+A module is a directory containing one or more CloudSpec files. Modules are designed to be reusable. CloudSpec runs on an initial module that can use other modules, and those modules can use other modules.
 
 ```
-plan :plan_name
-    (input ...)*
-    (set ...)*
-    (use module|group|rule ...)*
-    (group ...)*
-    (rule ...)*
-end plan
+my_module/
+  - modules.cs
+  - inputs.cs
+  - rules.cs
 ```
 
-Where `:plan_name` is a quoted `"string"`. For example, `"My plan"`.
+A module must have at least one `rule`, either declared in the same module or imported from another module.
 
-Within a `plan` you can declare the following:
+## `.cs` file
+
+```
+(input ...)*
+(set ...)*
+(use ...)*
+(rule ...)*
+```
+
+Within a `.cs` file you can declare one or many of the following:
 
 - Zero or more `input`: an input variable (see: [input declaration](#input-declaration))
 - Zero or more `set`: set a global configuration (see: [set declaration](#set-declaration))
-- Zero or more `use module|group|rule`: import a module, group or rule from a file (see: [use declaration](#use-declaration))
-- Zero or more `group`: a group of rules (see: [group declaration](#group-declaration))
+- Zero or more `use`: import a module from a file (see: [use declaration](#use-declaration))
 - Zero or more `rule`: a validation rule (see: [rule declaration](#rule-declaration))
-
-A plan must have at least one `rule` declared either in-line, within a group, within a module or imported.
-
-## `module` declaration
-
-Modules are like plan, but reusable. Different plans can import the same module. A `module` is declared in a file with the `.csm` extension.
-
-```
-module :module_name
-    (input ...)*
-    (set ...)*
-    (use module|group|rule ...)*
-    (group ...)*
-    (rule ...)*
-end module
-```
-
-Where `:module_name` is a quoted `"string"`. For example, `"My module"`.
-
-Within a `module` you can declare the following:
-
-- Zero or more `input`: an input variable (see: [input declaration](#input-declaration))
-- Zero or more `set`: set a global configuration (see: [set declaration](#set-declaration))
-- Zero or more `use module|group|rule`: import a module|group|rule from a file (see: [use declaration](#use-declaration))
-- Zero or more `group`: a group of rules (see: [group declaration](#group-declaration))
-- Zero or more `rule`: a validation rule (see: [rule declaration](#rule-declaration))
-
-A module must have at least one `rule` declared either in-line, within a group, within another module or imported.
-
-## `group` declaration
-
-Rules that are alike or share the same configuration parameters can be grouped. A `group` can be declared in-line or its own file with the `.csg` extension.
-
-```
-group :group_name
-    (set ...)*
-    (use rule ...)*
-    (rule ...)*
-end group
-```
-
-Where `:module_name` is a quoted `"string"`. For example, `"My group"`.
-
-Within a `group` you can declare the following:
-
-- Zero or more `set`: set a global configuration (see: [set declaration](#set-declaration))
-- Zero or more `use rule`: import a rule from a file (see: [use declaration](#use-declaration))
-- Zero or more `rule`: a validation rule (see: [rule declaration](#rule-declaration))
-
-A group must have at least one `rule` declared either in-line or imported.
 
 ## `rule` declaration
 
-Validation rules are the essential ingredient of CloudSpec. At least one rule must exist in a `plan`, `module` or `group`. Without rules there are not validations. A `rule` can be declared in-line or its own file with the `.csr` extension.
+Validation rules are the essential ingredient of CloudSpec. At least one rule must exist in a `module`. Without rules there are not validations.
 
 ```
 rule :rule_name
@@ -138,13 +93,13 @@ Multiple `assert` declarations can be concatenated with `and`.
 
 ## `use` declaration
 
-This is used to compose a spec with multiple files. Modules, groups and rules can be defined and imported into a plan from other files.
+This is used to import other modules.
 
 ```
-use (module|group|rule) :file_path
+use :file_path as :module_identifier
 ```
 
-Where `:file_path` is a system path that is either absolute or relative to the file importing it.
+Where `:file_path` is a system path that is either absolute or relative to the file importing it, and `:module_identifier` is a unique ID within the module (e.g. my_mod).
 
 ## `input` declaration
 

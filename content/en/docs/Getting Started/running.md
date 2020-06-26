@@ -8,45 +8,42 @@ description: >
 
 To run CloudSpec, you first need a resource in a cloud provider that you can validate. Please feel free to fit this tutorial to a real resource you own. In this example, we are using an EC2 instance in AWS, which has a tag `environment=production`. We want to prove whether the EBS volumes attached to the EC2 instance have a minimum of 100GB of space and are encrypted.
 
-First, you define a CloudSpec `plan`. A plan is your validation project. Everything that you declare in CloudSpec is part of a plan or a module. A plan can have modules, groups or rules. For simplicity, we are not covering modules, groups and many other directives in this tutorial. Please refer to the [CloudSpec syntax](../../syntax) documentation for a full description of the CloudSpec logical language.
-
-A plan is a block that starts with `plan:plan_name` and ends with `end plan`.
+First, you create a CloudSpec `module` directory. Everything that you declare in CloudSpec is part of a module.
 
 ```
-plan "My production environment"
-# TODO add validation directives
-end plan
+mkdir my_module
 ```
 
-Comments start with a `#`, and everything from it to the end line is ignored.
+Now that we have a module directory, we can declare a rule to validate our EC2 instance with the requirement dictated above: _EBS volumes attached to the EC2 instance have a minimum of 100GB of space and are encrypted_. We do that by creating a file `rules.cs` within our module directory. The name of the file doesn't matter as long its extension is `.cs`:
 
-Now that we have a plan, we can declare a rule to validate our EC2 instance with the requirement dictated above: _EBS volumes attached to the EC2 instance have a minimum of 100GB of space and are encrypted_. We do that as follows:
-
-```
-plan "My production environment"
-    rule "EC2 instances should have enough disk space and be encrypted"
-        on aws:ec2:instance
-        with tags["environment"] equal to "production"
-        assert block_device_mappings (
-            ebs (
-                > volume (
-                    size gte 100 and
-                    encryption is enabled
-                )
+```bash
+tee my_module/rules.cs <<EOF
+# My validation rule for instances
+rule "EC2 instances should have enough disk space and be encrypted"
+    on aws:ec2:instance
+    with tags["environment"] equal to "production"
+    assert block_device_mappings (
+        ebs (
+            > volume (
+                size gte 100 and
+                encryption is enabled
             )
         )
-    end rule
-end plan
+    )
+end
+EOF
 ```
 
 Ok, that's a lot. But you probably understood everything. The beauty of the CloudSpec syntax is that you can declare validation rules using plain English language. Let's dissect all that's going on.
 
-First, a rule declaration starts with `rule:rule_name` and ends with `end rule`. A rule has a scope, which is the subset of your AWS resources to validate. In our example, the scope is all EC2 instances with tag `environment=production`. You define the scope with the `on` and `with`directives. With `on` you select a resource type, and with `with` narrow down the selection to more specific resources.
+First, a rule declaration starts with `rule:rule_name` and ends with `end rule`. A rule has a scope, which is the subset of your AWS resources to validate. In our example, the scope is all EC2 instances with tag `environment=production`. You define the scope with the `on` and `with`directives. With `on` you select a resource type, and with `with` narrow down the selection to more specific resources. Comments start with a `#`, and everything from it to the end of the line is ignored.
+
+Please refer to the [CloudSpec syntax](../../syntax) documentation for a full description of the CloudSpec logical language.
 
 ```
 ...
-        on aws:ec2:instance
-        with tags["environment"] equal to "production"
+    on aws:ec2:instance
+    with tags["environment"] equal to "production"
 ...
 ```
 
@@ -56,23 +53,23 @@ Once you select the resources that you want to validate, you use the `assert` di
 
 Please refer to the [member path](../../syntax/member-path) and [predicates](../../syntax/predicates) documentation for how to address resource properties and supported predicates.
 
-Finally, it's time to run your plan. The best way to do it is via the Docker container provider. It has everything you need to run CloudSpec. Alternatively, you can build CloudSpec yourself (see the [development](../../development) documentation). Save your plan in a `specs/myplan.csplan` file and run the following command.
+Finally, it's time to run your module. The best way to do it is via the Docker container provider. It has everything you need to run CloudSpec. Alternatively, you can build CloudSpec yourself (see the [development](../../development) documentation).
 
 ```
 export AWS_ACCESS_KEY_ID=***
 export AWS_SECRET_ACCESS_KEY=***
 export AWS_REGION=eu-west-1
-docker run -v "./specs:/specs" -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_REGION efoncubierta/cloudspec run -p specs/my.csplan
+docker run -v "/my_module:/my_module" -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_REGION efoncubierta/cloudspec run -p my_module
 ```
 
 If you are running the docker container in AWS with a dedicated IAM role attached, you can omit the AWS environment variables.
 
 ```
-docker run -v "./specs:/specs" efoncubierta/cloudspec run -p specs/my.csplan
+docker run -v "/my_module:/my_module" efoncubierta/cloudspec run -p my_module
 ```
 
 You should get an output report like the following.
 
 <p align="center"><img style="max-width: 100%" src="/images/demo.gif?raw=true"/></p>
 
-Voilà! You just run your first CloudSpec plan. Congratulations!
+Voilà! You just run your first CloudSpec validation. Congratulations!
