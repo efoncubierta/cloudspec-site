@@ -48,7 +48,7 @@ rule :rule_name
     on :resource_reference
     (with ...)?
     assert ...
-end rule
+end
 ```
 
 Where `:rule_name` is a quoted `"string"`. for example `"My rule"`, and `:resource_reference` is a unique resource definition reference (e.g. aws:ec2:instance).

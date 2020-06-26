@@ -36,7 +36,7 @@ EOF
 
 Ok, that's a lot. But you probably understood everything. The beauty of the CloudSpec syntax is that you can declare validation rules using plain English language. Let's dissect all that's going on.
 
-First, a rule declaration starts with `rule:rule_name` and ends with `end rule`. A rule has a scope, which is the subset of your AWS resources to validate. In our example, the scope is all EC2 instances with tag `environment=production`. You define the scope with the `on` and `with`directives. With `on` you select a resource type, and with `with` narrow down the selection to more specific resources. Comments start with a `#`, and everything from it to the end of the line is ignored.
+First, a rule declaration starts with `rule:rule_name` and ends with `end`. A rule has a scope, which is the subset of your AWS resources to validate. In our example, the scope is all EC2 instances with tag `environment=production`. You define the scope with the `on` and `with`directives. With `on` you select a resource type, and with `with` narrow down the selection to more specific resources. Comments start with a `#`, and everything from it to the end of the line is ignored.
 
 Please refer to the [CloudSpec syntax](../../syntax) documentation for a full description of the CloudSpec logical language.
 
