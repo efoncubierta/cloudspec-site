@@ -6,8 +6,7 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **entries**
 (`nested[]`):
 One or more entries (rules) in the network ACL.
@@ -38,7 +37,7 @@ The protocol number. A value of "-1" means all protocols.
     * **rule_action**
 (`string`):
 Indicates whether to allow or deny the traffic that matches the rule.
-Example values: `allow | deny`
+Allowed values: `allow`, `deny`, `null`
 * **is_default**
 (`boolean`):
 Indicates whether this is the default network ACL for the VPC.
@@ -51,16 +50,12 @@ The ID of the AWS account that owns the network ACL.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **tags**
 (`key_value[]`):
 Any tags assigned to the network ACL.
-
-## Associations
-
-* **subnets**
-(*aws:ec2:subnet*[]):
+* **&gt;subnets**
+([aws:ec2:subnet](../../aws/ec2_subnet)[]):
 The subnet
-* **vpc**
-(*aws:ec2:vpc*):
+* **&gt;vpc**
+([aws:ec2:vpc](../../aws/ec2_vpc)):
 The VPC for the network ACL

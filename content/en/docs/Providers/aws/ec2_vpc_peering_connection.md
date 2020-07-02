@@ -6,8 +6,7 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **accepter_vpc_info**
 (`nested`):
 Information about the accepter VP.
@@ -38,13 +37,15 @@ Indicates whether a local VPC can communicate with a ClassicLink connection in t
     * **region**
 (`string`):
 The Region in which the VPC is located.
+    * **&gt;vpc**
+([aws:ec2:vpc](../../aws/ec2_vpc)):
+The VPC
 * **expiration_time**
 (`date`):
 The time that an unaccepted VPC peering connection will expire.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **requester_vpc_info**
 (`nested`):
 Information about the requester VPC.
@@ -75,14 +76,16 @@ Indicates whether a local VPC can communicate with a ClassicLink connection in t
     * **region**
 (`string`):
 The Region in which the VPC is located.
+    * **&gt;vpc**
+([aws:ec2:vpc](../../aws/ec2_vpc)):
+The VPC
 * **status**
 (`string`):
 The status of the VPC peering connection.
-Example values: `initiating-request | pending-acceptance | active | deleted | rejected | failed | expired | provisioning | deleting`
+Allowed values: `initiating-request`, `pending-acceptance`, `active`, `deleted`, `rejected`, `failed`, `expired`, `provisioning`, `deleting`, `null`
 * **tags**
 (`key_value[]`):
 Any tags assigned to the resource.
 * **vpc_peering_connection_id**
 (`string`):
 The ID of the VPC peering connection.
-

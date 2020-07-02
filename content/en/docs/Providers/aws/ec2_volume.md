@@ -6,8 +6,7 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **attachments**
 (`nested[]`):
 Information about the volume attachments.
@@ -23,7 +22,13 @@ The device name.
     * **state**
 (`string`):
 The attachment state of the volume.
-Example values: `attaching | attached | detaching | detached | busy`
+Allowed values: `attaching`, `attached`, `detaching`, `detached`, `busy`, `null`
+    * **&gt;instance**
+([aws:ec2:instance](../../aws/ec2_instance)):
+The instance
+    * **&gt;volume**
+([aws:ec2:volume](../../aws/ec2_volume)):
+The volume
 * **availability_zone**
 (`string`):
 The Availability Zone for the volume.
@@ -48,14 +53,13 @@ The Amazon Resource Name (ARN) of the Outpost.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **size**
 (`number`):
 The size of the volume, in GiBs.
 * **state**
 (`string`):
 The volume state.
-Example values: `creating | available | in-use | deleting | deleted | error`
+Allowed values: `creating`, `available`, `in-use`, `deleting`, `deleted`, `error`, `null`
 * **tags**
 (`key_value[]`):
 Any tags assigned to the volume.
@@ -65,10 +69,7 @@ The ID of the volume.
 * **volume_type**
 (`string`):
 The volume type.
-Example values: `standard | io1 | gp2 | sc1 | st1`
-
-## Associations
-
-* **snapshot**
-(*aws:ec2:snapshot*):
+Allowed values: `standard`, `io1`, `gp2`, `sc1`, `st1`, `null`
+* **&gt;snapshot**
+([aws:ec2:snapshot](../../aws/ec2_snapshot)):
 The snapshot from which the volume was created, if applicable

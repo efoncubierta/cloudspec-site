@@ -1,13 +1,12 @@
 ---
-title: "Transit Gateway"
-linkTitle: "Transit Gateway"
+title: "Local Gateway"
+linkTitle: "Local Gateway"
 description: >
   All about resource aws:ec2:local_gateway.
 ---
 
 
-## Properties
-
+## Members
 * **local_gateway_id**
 (`string`):
 The ID of the local gateway.
@@ -20,11 +19,9 @@ The ID of the AWS account ID that owns the local gateway.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **state**
 (`string`):
 The state of the local gateway.
 * **tags**
 (`key_value[]`):
 The tags assigned to the local gateway.
-

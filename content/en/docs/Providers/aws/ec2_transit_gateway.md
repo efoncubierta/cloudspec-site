@@ -6,8 +6,7 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **creation_time**
 (`date`):
 The creation time.
@@ -32,17 +31,22 @@ Indicates whether multicast is enabled on the transit gateway.
     * **vpn_ecmp_support**
 (`boolean`):
 Indicates whether Equal Cost Multipath Protocol support is enabled.
+    * **&gt;association_default_route_table**
+([aws:ec2:route_table](../../aws/ec2_route_table)):
+The default association route table
+    * **&gt;propagation_default_route_table**
+([aws:ec2:route_table](../../aws/ec2_route_table)):
+The default propagation route table
 * **owner_id**
 (`string`):
 The ID of the AWS account ID that owns the transit gateway.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **state**
 (`string`):
 The state of the transit gateway.
-Example values: `pending | available | modifying | deleting | deleted`
+Allowed values: `pending`, `available`, `modifying`, `deleting`, `deleted`, `null`
 * **tags**
 (`key_value[]`):
 The tags for the transit gateway.
@@ -52,4 +56,3 @@ The Amazon Resource Name (ARN) of the transit gateway.
 * **transit_gateway_id**
 (`string`):
 The ID of the transit gateway.
-

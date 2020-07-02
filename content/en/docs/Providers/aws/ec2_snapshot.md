@@ -6,8 +6,7 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **encrypted**
 (`boolean`):
 Indicates whether the snapshot is encrypted.
@@ -20,7 +19,6 @@ The progress of the snapshot, as a percentage.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **snapshotId**
 (`string`):
 The ID of the snapshot. Each snapshot receives a unique identifier when it is created.
@@ -30,15 +28,13 @@ The time stamp when the snapshot was initiated.
 * **state**
 (`string`):
 The snapshot state.
+Allowed values: `pending`, `completed`, `error`, `null`
 * **tags**
 (`key_value[]`):
 Any tags assigned to the snapshot.
 * **volume_size**
 (`number`):
- The size of the volume, in GiB.
-
-## Associations
-
-* **volume**
-(*aws:ec2:volume*):
+The size of the volume, in GiB.
+* **&gt;volume**
+([aws:ec2:volume](../../aws/ec2_volume)):
 The volume that was used to create the snapshot

@@ -6,8 +6,7 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **create_time**
 (`date`):
 The date and time the NAT gateway was created.
@@ -29,26 +28,25 @@ The private IP address associated with the Elastic IP address.
     * **public_ip**
 (`string`):
 The Elastic IP address associated with the NAT gateway.
+    * **&gt;network_interface**
+([aws:ec2:network_interface](../../aws/ec2_network_interface)):
+The ID of the network interface associated with the NAT gateway
 * **nat_gateway_id**
 (`string`):
 The ID of the NAT gateway.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **state**
 (`string`):
 The state of the NAT gateway.
-Example values: `pending | failed | available | deleting | deleted`
+Allowed values: `pending`, `failed`, `available`, `deleting`, `deleted`, `null`
 * **tags**
 (`key_value[]`):
 The tags for the NAT gateway.
-
-## Associations
-
-* **subnet**
-(*aws:ec2:subnet*):
+* **&gt;subnet**
+([aws:ec2:subnet](../../aws/ec2_subnet)):
 The subnet in which the NAT gateway is located
-* **vpc**
-(*aws:ec2:vpc*):
+* **&gt;vpc**
+([aws:ec2:vpc](../../aws/ec2_vpc)):
 The VPC in which the NAT gateway is located

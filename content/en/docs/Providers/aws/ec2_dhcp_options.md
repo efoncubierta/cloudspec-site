@@ -6,8 +6,7 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **dhcp_configurations**
 (`nested[]`):
 One or more DHCP options in the set.
@@ -26,8 +25,6 @@ The ID of the AWS account that owns the Capacity Reservation.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **tags**
 (`key_value[]`):
 Any tags assigned to the DHCP options set.
-

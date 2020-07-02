@@ -1,13 +1,12 @@
 ---
-title: "VPC Subnet"
-linkTitle: "VPC Subnet"
+title: "Subnet"
+linkTitle: "Subnet"
 description: >
   All about resource aws:ec2:subnet.
 ---
 
 
-## Properties
-
+## Members
 * **assign_ipv6_address_on_creation**
 (`boolean`):
 Indicates whether a network interface created in this subnet receives an IPv6 address..
@@ -32,7 +31,7 @@ The IPv6 CIDR block.
     * **ipv6_cidr_block_state**
 (`string`):
 Information about the state of the CIDR block.
-Example values: `associating | associated | disassociating | disassociated | failing | failed`
+Allowed values: `associating`, `associated`, `disassociating`, `disassociated`, `failing`, `failed`, `null`
 * **map_public_ip_on_launch**
 (`boolean`):
 Indicates whether instances launched in this subnet receive a public IPv4 address.
@@ -45,11 +44,10 @@ The ID of the AWS account that owns the subnet.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **state**
 (`string`):
 The current state of the subnet.
-Example values: `pending | available`
+Allowed values: `pending`, `available`, `null`
 * **subnet_arn**
 (`string`):
 The Amazon Resource Name (ARN) of the subnet.
@@ -59,9 +57,6 @@ The ID of the subnet.
 * **tags**
 (`key_value[]`):
 Any tags assigned to the subnet.
-
-## Associations
-
-* **vpc**
-(*aws:ec2:vpc*):
+* **&gt;vpc**
+([aws:ec2:vpc](../../aws/ec2_vpc)):
 The ID of the VPC the subnet is in

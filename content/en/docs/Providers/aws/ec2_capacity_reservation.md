@@ -6,8 +6,7 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **availability_zone**
 (`string`):
 The Availability Zone in which the capacity is reserved.
@@ -32,17 +31,18 @@ The date and time at which the Capacity Reservation expires.
 * **end_date_type**
 (`string`):
 Indicates the way in which the Capacity Reservation ends.
-Example values: `unlimited | limited`
+Allowed values: `unlimited`, `limited`, `null`
 * **ephemeral_storage**
 (`boolean`):
-Indicates whether the Capacity Reservation supports instances with temporary, block-level storage..
+Indicates whether the Capacity Reservation supports instances with temporary.
 * **instance_match_criteria**
 (`string`):
 Indicates the type of instance launches that the Capacity Reservation accepts.
-Example values: `open | targeted`
+Allowed values: `open`, `targeted`, `null`
 * **instance_platform**
 (`string`):
 The type of operating system for which the Capacity Reservation reserves capacity.
+Allowed values: `Linux/UNIX`, `Red Hat Enterprise Linux`, `SUSE Linux`, `Windows`, `Windows with SQL Server`, `Windows with SQL Server Enterprise`, `Windows with SQL Server Standard`, `Windows with SQL Server Web`, `Linux with SQL Server Standard`, `Linux with SQL Server Web`, `Linux with SQL Server Enterprise`, `null`
 * **instance_type**
 (`string`):
 The type of instance for which the Capacity Reservation reserves capacity.
@@ -52,19 +52,17 @@ The ID of the AWS account that owns the DHCP options set.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **state**
 (`string`):
 The current state of the Capacity Reservation.
-Example values: `active | expired | cancelled | pending | failed`
+Allowed values: `active`, `expired`, `cancelled`, `pending`, `failed`, `null`
 * **tags**
 (`key_value[]`):
 Any tags assigned to the Capacity Reservation.
 * **tenancy**
 (`string`):
 Indicates the tenancy of the Capacity Reservation.
-Example values: `default | dedicated`
+Allowed values: `default`, `dedicated`, `null`
 * **total_instance_count**
 (`number`):
 The total number of instances for which the Capacity Reservation reserves capacity.
-

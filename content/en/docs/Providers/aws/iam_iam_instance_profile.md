@@ -1,13 +1,12 @@
 ---
-title: "Amazon Machine Image"
-linkTitle: "Amazon Machine Image"
+title: "IAM Instance Profile"
+linkTitle: "IAM Instance Profile"
 description: >
   All about resource aws:iam:iam_instance_profile.
 ---
 
 
-## Properties
-
+## Members
 * **id**
 (`string`):
 Instance profile ID.
@@ -17,4 +16,3 @@ Instance profile name.
 * **path**
 (`string`):
 Path.
-

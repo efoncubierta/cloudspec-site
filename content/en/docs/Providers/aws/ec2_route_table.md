@@ -6,21 +6,29 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **associations**
 (`nested[]`):
 The associations between the route table and one or more subnets or a gateway.
     * **state**
 (`string`):
 The state of the association.
-Example values: `associating | associated | disassociating | disassociated | failed`
+Allowed values: `associating`, `associated`, `disassociating`, `disassociated`, `failed`, `null`
     * **main**
 (`boolean`):
 Indicates whether this is the main route table.
-    * **main**
+    * **route_table_association_id**
 (`string`):
 The ID of the association.
+    * **&gt;gateway**
+([aws:ec2:internet_gateway](../../aws/ec2_internet_gateway)):
+The internet gateway or virtual private gateway
+    * **&gt;route_table**
+([aws:ec2:route_table](../../aws/ec2_route_table)):
+The route table
+    * **&gt;subnet**
+([aws:ec2:subnet](../../aws/ec2_subnet)):
+The subnet
 * **owner_id**
 (`string`):
 The ID of the AWS account that owns the route table.
@@ -30,7 +38,6 @@ Any virtual private gateway (VGW) propagating routes.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **route_table_id**
 (`string`):
 The ID of the route table.
@@ -46,23 +53,44 @@ The IPv6 CIDR block used for the destination match.
     * **destination_prefix_list_id**
 (`string`):
 The prefix of the AWS service.
-    * **instance_owner-Id**
+    * **instance_owner_id**
 (`string`):
 The AWS account ID of the owner of the instance.
     * **origin**
 (`string`):
 Describes how the route was created.
-Example values: `CreateRouteTable | CreateRoute | EnableVgwRoutePropagation`
+Allowed values: `CreateRouteTable`, `CreateRoute`, `EnableVgwRoutePropagation`, `null`
     * **state**
 (`string`):
 The state of the route.
-Example values: `active | blackhole`
+Allowed values: `active`, `blackhole`, `null`
+    * **&gt;egress_only_internet_gateway**
+([aws:ec2:internet_gateway](../../aws/ec2_internet_gateway)):
+The egress-only internet gateway
+    * **&gt;gateway**
+([aws:ec2:internet_gateway](../../aws/ec2_internet_gateway)):
+The gateway attached to your VPC
+    * **&gt;instance**
+([aws:ec2:instance](../../aws/ec2_instance)):
+The ID of a NAT instance in your VPC
+    * **&gt;local_gateway**
+([aws:ec2:local_gateway](../../aws/ec2_local_gateway)):
+The local gateway
+    * **&gt;nat_gateway**
+([aws:ec2:nat_gateway](../../aws/ec2_nat_gateway)):
+The NAT gateway
+    * **&gt;network_interface**
+([aws:ec2:network_interface](../../aws/ec2_network_interface)):
+The network interface
+    * **&gt;transit_gateway**
+([aws:ec2:transit_gateway](../../aws/ec2_transit_gateway)):
+The transit gateway
+    * **&gt;vpc_peering_connection**
+([aws:ec2:vpc_peering_connection](../../aws/ec2_vpc_peering_connection)):
+The VPC peering connection
 * **tags**
 (`key_value[]`):
 Any tags assigned to the route table.
-
-## Associations
-
-* **vpc**
-(*aws:ec2:vpc*):
+* **&gt;vpc**
+([aws:ec2:vpc](../../aws/ec2_vpc)):
 The ID of the VPC

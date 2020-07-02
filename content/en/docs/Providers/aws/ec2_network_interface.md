@@ -6,8 +6,7 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **association**
 (`nested`):
 The association information for an Elastic IP address (IPv4) associated with the network interface.
@@ -35,12 +34,17 @@ The AWS account ID of the owner of the instance.
     * **status**
 (`string`):
 The attachment state.
+Allowed values: `attaching`, `attached`, `detaching`, `detached`, `null`
+    * **&gt;instance**
+([aws:ec2:instance](../../aws/ec2_instance)):
+The instance
 * **availability_zone**
 (`string`):
 The Availability Zone.
 * **interface_type**
 (`string`):
 The type of network interface.
+Allowed values: `interface`, `natGateway`, `efa`, `null`
 * **ipv6_addresses**
 (`string[]`):
 The IPv6 addresses associated with the network interface.
@@ -86,26 +90,22 @@ The private IPv4 address.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **source_dest_check**
 (`boolean`):
 Indicates whether traffic to or from the instance is validated.
 * **status**
 (`string`):
 The status of the network interface.
-Example values: `available | associated | attaching | in-use | detaching`
+Allowed values: `available`, `associated`, `attaching`, `in-use`, `detaching`, `null`
 * **tags**
 (`key_value[]`):
 Any tags assigned to the network interface.
-
-## Associations
-
-* **groups**
-(*aws:ec2:security_group*[]):
+* **&gt;groups**
+([aws:ec2:security_group](../../aws/ec2_security_group)[]):
 Any security groups for the network interface
-* **subnet**
-(*aws:ec2:subnet*):
+* **&gt;subnet**
+([aws:ec2:subnet](../../aws/ec2_subnet)):
 The subnet
-* **vpc**
-(*aws:ec2:vpc*):
+* **&gt;vpc**
+([aws:ec2:vpc](../../aws/ec2_vpc)):
 The VPC

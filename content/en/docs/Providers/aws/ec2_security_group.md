@@ -6,8 +6,7 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **group_id**
 (`string`):
 The ID of the security group.
@@ -53,6 +52,15 @@ The status of a VPC peering connection, if applicable.
         * **userId**
 (`string`):
 The ID of an AWS account.
+        * **&gt;group**
+([aws:ec2:security_group](../../aws/ec2_security_group)):
+The security group
+        * **&gt;vpc**
+([aws:ec2:vpc](../../aws/ec2_vpc)):
+The VPC for the referenced security group, if applicable
+        * **&gt;vpc_peering_connection**
+([aws:ec2:vpc_peering_connection](../../aws/ec2_vpc_peering_connection)):
+The VPC peering connection, if applicable
 * **ip_permissions_egress**
 (`nested[]`):
 [VPC only] The outbound rules associated with the security group.
@@ -92,19 +100,24 @@ The status of a VPC peering connection, if applicable.
         * **userId**
 (`string`):
 The ID of an AWS account.
+        * **&gt;group**
+([aws:ec2:security_group](../../aws/ec2_security_group)):
+The security group
+        * **&gt;vpc**
+([aws:ec2:vpc](../../aws/ec2_vpc)):
+The VPC for the referenced security group, if applicable
+        * **&gt;vpc_peering_connection**
+([aws:ec2:vpc_peering_connection](../../aws/ec2_vpc_peering_connection)):
+The VPC peering connection, if applicable
 * **owner_id**
 (`string`):
 The AWS account ID of the owner of the security group.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **tags**
 (`key_value[]`):
 Any tags assigned to the security group.
-
-## Associations
-
-* **vpc**
-(*aws:ec2:vpc*):
+* **&gt;vpc**
+([aws:ec2:vpc](../../aws/ec2_vpc)):
 [VPC only] The VPC for the security group

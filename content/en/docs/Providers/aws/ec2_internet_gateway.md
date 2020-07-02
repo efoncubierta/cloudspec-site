@@ -6,15 +6,17 @@ description: >
 ---
 
 
-## Properties
-
+## Members
 * **attachments**
 (`nested[]`):
 Any VPCs attached to the internet gateway.
     * **state**
 (`string`):
 The current state of the attachment.
-Example values: `attaching | attached | detaching | detached`
+Allowed values: `attaching`, `attached`, `detaching`, `detached`, `null`
+    * **&gt;vpc**
+([aws:ec2:vpc](../../aws/ec2_vpc)):
+The VPC
 * **internet_gateway_id**
 (`string`):
 The ID of the internet gateway.
@@ -24,8 +26,6 @@ The ID of the AWS account that owns the internet gateway.
 * **region**
 (`string`):
 The AWS region.
-Example values: `us-east-1 | eu-west-1`
 * **tags**
 (`key_value[]`):
 Any tags assigned to the internet gateway.
-
