@@ -31,5 +31,5 @@ The AWS region.
 (`key_value[]`):
 The tags assigned to the Elastic Graphics accelerator.
 * **&gt;instance**
-([aws:ec2:instance](../../aws/ec2_instance)):
+([aws:ec2:instance](../../aws/ec2/instance)):
 The instance to which the Elastic Graphics accelerator is attached

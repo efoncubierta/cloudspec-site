@@ -60,5 +60,5 @@ Any tags assigned to the VPC.
 (`string`):
 The ID of the VPC.
 * **&gt;dhcp_options**
-([aws:ec2:dhcp_options](../../aws/ec2_dhcp_options)):
+([aws:ec2:dhcp_options](../../aws/ec2/dhcp_options)):
 The ID of the set of DHCP options you've associated with the VPC

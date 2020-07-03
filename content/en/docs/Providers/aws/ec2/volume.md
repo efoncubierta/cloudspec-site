@@ -24,10 +24,10 @@ The device name.
 The attachment state of the volume.
 Allowed values: `attaching`, `attached`, `detaching`, `detached`, `busy`, `null`
     * **&gt;instance**
-([aws:ec2:instance](../../aws/ec2_instance)):
+([aws:ec2:instance](../../aws/ec2/instance)):
 The instance
     * **&gt;volume**
-([aws:ec2:volume](../../aws/ec2_volume)):
+([aws:ec2:volume](../../aws/ec2/volume)):
 The volume
 * **availability_zone**
 (`string`):
@@ -71,5 +71,5 @@ The ID of the volume.
 The volume type.
 Allowed values: `standard`, `io1`, `gp2`, `sc1`, `st1`, `null`
 * **&gt;snapshot**
-([aws:ec2:snapshot](../../aws/ec2_snapshot)):
+([aws:ec2:snapshot](../../aws/ec2/snapshot)):
 The snapshot from which the volume was created, if applicable

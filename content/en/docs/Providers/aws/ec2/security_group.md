@@ -53,13 +53,13 @@ The status of a VPC peering connection, if applicable.
 (`string`):
 The ID of an AWS account.
         * **&gt;group**
-([aws:ec2:security_group](../../aws/ec2_security_group)):
+([aws:ec2:security_group](../../aws/ec2/security_group)):
 The security group
         * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 The VPC for the referenced security group, if applicable
         * **&gt;vpc_peering_connection**
-([aws:ec2:vpc_peering_connection](../../aws/ec2_vpc_peering_connection)):
+([aws:ec2:vpc_peering_connection](../../aws/ec2/vpc_peering_connection)):
 The VPC peering connection, if applicable
 * **ip_permissions_egress**
 (`nested[]`):
@@ -101,13 +101,13 @@ The status of a VPC peering connection, if applicable.
 (`string`):
 The ID of an AWS account.
         * **&gt;group**
-([aws:ec2:security_group](../../aws/ec2_security_group)):
+([aws:ec2:security_group](../../aws/ec2/security_group)):
 The security group
         * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 The VPC for the referenced security group, if applicable
         * **&gt;vpc_peering_connection**
-([aws:ec2:vpc_peering_connection](../../aws/ec2_vpc_peering_connection)):
+([aws:ec2:vpc_peering_connection](../../aws/ec2/vpc_peering_connection)):
 The VPC peering connection, if applicable
 * **owner_id**
 (`string`):
@@ -119,5 +119,5 @@ The AWS region.
 (`key_value[]`):
 Any tags assigned to the security group.
 * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 [VPC only] The VPC for the security group

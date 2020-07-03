@@ -36,5 +36,5 @@ Any tags assigned to the snapshot.
 (`number`):
 The size of the volume, in GiB.
 * **&gt;volume**
-([aws:ec2:volume](../../aws/ec2_volume)):
+([aws:ec2:volume](../../aws/ec2/volume)):
 The volume that was used to create the snapshot

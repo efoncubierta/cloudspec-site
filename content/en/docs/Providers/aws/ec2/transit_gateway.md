@@ -32,10 +32,10 @@ Indicates whether multicast is enabled on the transit gateway.
 (`boolean`):
 Indicates whether Equal Cost Multipath Protocol support is enabled.
     * **&gt;association_default_route_table**
-([aws:ec2:route_table](../../aws/ec2_route_table)):
+([aws:ec2:route_table](../../aws/ec2/route_table)):
 The default association route table
     * **&gt;propagation_default_route_table**
-([aws:ec2:route_table](../../aws/ec2_route_table)):
+([aws:ec2:route_table](../../aws/ec2/route_table)):
 The default propagation route table
 * **owner_id**
 (`string`):

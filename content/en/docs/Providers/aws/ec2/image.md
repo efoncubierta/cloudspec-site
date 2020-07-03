@@ -37,7 +37,7 @@ The size of the volume, in GiB.
 The volume type.
 Allowed values: `standard`, `io1`, `gp2`, `sc1`, `st1`, `null`
         * **&gt;snapshot**
-([aws:ec2:snapshot](../../aws/ec2_snapshot)):
+([aws:ec2:snapshot](../../aws/ec2/snapshot)):
 The ID of the snapshot
     * **virtual_name**
 (`string`):

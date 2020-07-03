@@ -15,7 +15,7 @@ Any VPCs attached to the internet gateway.
 The current state of the attachment.
 Allowed values: `attaching`, `attached`, `detaching`, `detached`, `null`
     * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 The VPC
 * **internet_gateway_id**
 (`string`):

@@ -58,5 +58,5 @@ The ID of the subnet.
 (`key_value[]`):
 Any tags assigned to the subnet.
 * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 The ID of the VPC the subnet is in

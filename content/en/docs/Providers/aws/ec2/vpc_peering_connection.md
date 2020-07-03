@@ -38,7 +38,7 @@ Indicates whether a local VPC can communicate with a ClassicLink connection in t
 (`string`):
 The Region in which the VPC is located.
     * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 The VPC
 * **expiration_time**
 (`date`):
@@ -77,7 +77,7 @@ Indicates whether a local VPC can communicate with a ClassicLink connection in t
 (`string`):
 The Region in which the VPC is located.
     * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 The VPC
 * **status**
 (`string`):

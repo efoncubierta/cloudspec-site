@@ -29,7 +29,7 @@ The private IP address associated with the Elastic IP address.
 (`string`):
 The Elastic IP address associated with the NAT gateway.
     * **&gt;network_interface**
-([aws:ec2:network_interface](../../aws/ec2_network_interface)):
+([aws:ec2:network_interface](../../aws/ec2/network_interface)):
 The ID of the network interface associated with the NAT gateway
 * **nat_gateway_id**
 (`string`):
@@ -45,8 +45,8 @@ Allowed values: `pending`, `failed`, `available`, `deleting`, `deleted`, `null`
 (`key_value[]`):
 The tags for the NAT gateway.
 * **&gt;subnet**
-([aws:ec2:subnet](../../aws/ec2_subnet)):
+([aws:ec2:subnet](../../aws/ec2/subnet)):
 The subnet in which the NAT gateway is located
 * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 The VPC in which the NAT gateway is located

@@ -54,8 +54,8 @@ The AWS region.
 (`key_value[]`):
 Any tags assigned to the network ACL.
 * **&gt;subnets**
-([aws:ec2:subnet](../../aws/ec2_subnet)[]):
+([aws:ec2:subnet](../../aws/ec2/subnet)[]):
 The subnet
 * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 The VPC for the network ACL

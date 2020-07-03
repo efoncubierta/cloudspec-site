@@ -36,7 +36,7 @@ The AWS account ID of the owner of the instance.
 The attachment state.
 Allowed values: `attaching`, `attached`, `detaching`, `detached`, `null`
     * **&gt;instance**
-([aws:ec2:instance](../../aws/ec2_instance)):
+([aws:ec2:instance](../../aws/ec2/instance)):
 The instance
 * **availability_zone**
 (`string`):
@@ -101,11 +101,11 @@ Allowed values: `available`, `associated`, `attaching`, `in-use`, `detaching`, `
 (`key_value[]`):
 Any tags assigned to the network interface.
 * **&gt;groups**
-([aws:ec2:security_group](../../aws/ec2_security_group)[]):
+([aws:ec2:security_group](../../aws/ec2/security_group)[]):
 Any security groups for the network interface
 * **&gt;subnet**
-([aws:ec2:subnet](../../aws/ec2_subnet)):
+([aws:ec2:subnet](../../aws/ec2/subnet)):
 The subnet
 * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 The VPC

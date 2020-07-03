@@ -31,7 +31,7 @@ Indicates whether the volume is deleted on instance termination.
 The attachment state.
 Allowed values: `attaching`, `attached`, `detaching`, `detached`, `null`
         * **&gt;volume**
-([aws:ec2:volume](../../aws/ec2_volume)):
+([aws:ec2:volume](../../aws/ec2/volume)):
 The EBS volume
 * **cpu_options**
 (`nested`):
@@ -126,16 +126,16 @@ Indicates whether to validate network traffic to or from this network interface.
 The status of the network interface.
 Allowed values: `available`, `associated`, `attaching`, `in-use`, `detaching`, `null`
     * **&gt;groups**
-([aws:ec2:security_group](../../aws/ec2_security_group)[]):
+([aws:ec2:security_group](../../aws/ec2/security_group)[]):
 One or more security groups
     * **&gt;network_interface**
-([aws:ec2:network_interface](../../aws/ec2_network_interface)):
+([aws:ec2:network_interface](../../aws/ec2/network_interface)):
 The network interface
     * **&gt;subnet**
-([aws:ec2:subnet](../../aws/ec2_subnet)):
+([aws:ec2:subnet](../../aws/ec2/subnet)):
 The subnet
     * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 The VPC
 * **outpost_arn**
 (`string`):
@@ -213,23 +213,23 @@ Any tags assigned to the instance.
 The virtualization type of the instance.
 Allowed values: `hvm`, `paravirtual`, `null`
 * **&gt;capacity_reservation**
-([aws:ec2:capacity_reservation](../../aws/ec2_capacity_reservation)):
+([aws:ec2:capacity_reservation](../../aws/ec2/capacity_reservation)):
 The Capacity Reservation
 * **&gt;elastic_gpus**
-([aws:ec2:elastic_gpu](../../aws/ec2_elastic_gpu)[]):
+([aws:ec2:elastic_gpu](../../aws/ec2/elastic_gpu)[]):
 The Elastic GPU associated with the instance
 * **&gt;iam_instance_profile**
-([aws:iam:iam_instance_profile](../../aws/iam_iam_instance_profile)):
+([aws:iam:iam_instance_profile](../../aws/iam/iam_instance_profile)):
 The IAM instance profile associated with the instance, if applicable
 * **&gt;image**
-([aws:ec2:image](../../aws/ec2_image)):
+([aws:ec2:image](../../aws/ec2/image)):
 The AMI used to launch the instance
 * **&gt;security_groups**
-([aws:ec2:security_group](../../aws/ec2_security_group)[]):
+([aws:ec2:security_group](../../aws/ec2/security_group)[]):
 The security groups for the instance
 * **&gt;subnet**
-([aws:ec2:subnet](../../aws/ec2_subnet)):
+([aws:ec2:subnet](../../aws/ec2/subnet)):
 [EC2-VPC] The subnet in which the instance is running
 * **&gt;vpc**
-([aws:ec2:vpc](../../aws/ec2_vpc)):
+([aws:ec2:vpc](../../aws/ec2/vpc)):
 [EC2-VPC] The VPC in which the instance is running
